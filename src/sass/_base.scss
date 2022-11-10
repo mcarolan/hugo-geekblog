@@ -1,86 +1,13 @@
-:root,
-:root[color-theme="light"] {
+:root {
   --code-max-height: none;
-
   @include color_theme_light;
   @include code_theme_light;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    @include color_theme_light;
-    @include code_theme_light;
-  }
-}
-
-:root[color-theme="dark"] {
-  @include color_theme_dark;
-  @include code_theme_dark;
-}
-
-:root[code-theme="dark"] {
-  @include code_theme_dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include color_theme_dark;
-    @include code_theme_dark;
-  }
 }
 
 html {
   font-size: $font-size-base;
   letter-spacing: 0.33px;
   scroll-behavior: smooth;
-
-  &.color-toggle-hidden {
-    #gblog-color-theme {
-      .gblog_brightness_auto,
-      .gblog_brightness_dark,
-      .gblog_brightness_light {
-        display: none;
-      }
-    }
-  }
-
-  &.color-toggle-light {
-    #gblog-color-theme {
-      .gblog_brightness_light {
-        display: inline-block;
-      }
-      .gblog_brightness_auto,
-      .gblog_brightness_dark {
-        display: none;
-      }
-    }
-  }
-
-  &.color-toggle-dark {
-    #gblog-color-theme {
-      .gblog_brightness_dark {
-        display: inline-block;
-      }
-      .gblog_brightness_auto,
-      .gblog_brightness_light {
-        display: none;
-      }
-    }
-  }
-
-  &.color-toggle-auto {
-    #gblog-color-theme {
-      .gblog_brightness_light {
-        display: none;
-      }
-      .gblog_brightness_dark {
-        display: none;
-      }
-      .gblog_brightness_auto {
-        display: inline-block;
-      }
-    }
-  }
 }
 
 html,
@@ -192,6 +119,18 @@ svg.gblog-icon {
   position: relative;
 }
 
+.gblog-header__link {
+  color: var(--header-font-color);
+}
+
+.gblog-header__link:hover {
+  color: var(--header-font-color);
+}
+ 
+.gblog-header__link:visited {
+  color: var(--header-font-color);
+}
+ 
 .gblog-header {
   background: var(--header-background);
   color: var(--header-font-color);
@@ -208,11 +147,12 @@ svg.gblog-icon {
 
   &__link,
   &__link:visited {
-    color: inherit;
+    color: var(--header-font-color);
     text-decoration: none;
   }
 
   &__link:hover {
+    color: var(--header-font-color);
     background: none;
   }
 }
@@ -234,7 +174,7 @@ svg.gblog-icon {
 }
 
 .gblog-nav {
-  background: $second-color;
+  background: var(--header-nav-background);
   color: $gray-100;
   min-height: $padding-4;
 
@@ -260,7 +200,7 @@ svg.gblog-icon {
     &:hover,
     &.is-active,
     &:visited:hover {
-      background: lighten($second-color, 10%);
+      background: var(--header-nav-background-link);
     }
 
     &:visited {
@@ -491,7 +431,7 @@ svg.gblog-icon {
 }
 
 .gblog-footer {
-  background: $second-color;
+  background: var(--header-nav-background);
   color: $gray-100;
 
   .fake-link {

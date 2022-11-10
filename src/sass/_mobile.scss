@@ -23,7 +23,7 @@
     }
 
     &__list {
-      background: lighten($second-color, 10%);
+      background: var(--header-nav-background-link);
       flex-direction: column;
       justify-content: center;
       max-height: 0;
@@ -42,7 +42,7 @@
       &:hover,
       &:visited:hover,
       &.is-active {
-        background: lighten($second-color, 5%);
+        background: var(--header-nav-background-link);
       }
     }
 

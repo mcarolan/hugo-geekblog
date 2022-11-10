@@ -3,8 +3,6 @@
   itemscope
   itemtype="http://schema.org/WebPage"
   lang="{{ .Site.Language.Lang }}"
-  class="color-toggle-hidden"
-  {{ if default false .Site.Params.GeekblogDarkModeCode }}code-theme="dark"{{ end }}
 >
   <head>
     {{ partial "head/meta" . }}
@@ -28,7 +26,7 @@
 
 
     <div
-      class="wrapper {{ if default false .Site.Params.GeekblogDarkModeDim }}dark-mode-dim{{ end }}"
+      class="wrapper"
     >
       {{ partial "site-header" . }}
 
