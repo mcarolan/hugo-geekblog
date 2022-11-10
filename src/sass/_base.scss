@@ -201,10 +201,11 @@ svg.gblog-icon {
     &.is-active,
     &:visited:hover {
       background: var(--header-nav-background-link);
+      color: var(--header-nav-link-color);
     }
 
     &:visited {
-      color: inherit;
+      color: var(--header-nav-link-color);
     }
   }
 
